@@ -1,0 +1,501 @@
+/*********/
+/* FONTS */
+/*********/
+@font-face {
+	font-family: 'Bell MT Regular';
+	src:url("../fonts/bell.ttf") format("truetype");	
+}
+
+
+@font-face {
+	font-family: 'Bell MT Italic';
+	src:url("../fonts/BellMTItalic.otf") format("opentype");	
+}
+
+@font-face {
+	font-family: 'Centaur';
+	src:url("../fonts/CENTAUR.TTF") format("truetype");	
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src:url("../fonts/Poppins-Regular.ttf") format("truetype");	
+}
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+  margin: 0;
+  padding: 0;
+}
+
+button, summary {
+	cursor: pointer;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text:#111;
+	--color-background:#eee;
+}
+
+
+
+
+
+/****************/
+/* STYLING BODY*/
+/****************/
+
+/**** STYLING HEADER ****/
+
+
+/* **** STYLING NAV **** */
+
+nav{
+	padding-top: 2em;
+	padding-right: 2em;
+	/* position: absolute; */
+}
+
+nav ul{
+	list-style-type: none;
+	display: flex;
+	gap: 2em;
+}
+
+nav ul li a{
+	color: white;
+	text-decoration: none;
+}
+
+nav ul li a:hover{
+	text-decoration: underline;
+}
+
+
+
+header{
+	width: 100%;
+	height: 100vh;
+	background-color: #F09BB9;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: center;
+	color: white;
+}
+
+.contentinheader{
+	width: 100%;
+	height: 100vh;
+	background-color: #F09BB9;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+header div{
+	display: inline-block;
+}
+
+
+h1{
+	/* font-size: 3.5em; */
+	font-size: clamp(1em, 5vw, 3.5em);
+	font-family: 'Bell MT Regular';
+	font-weight: lighter;
+
+	overflow: hidden;
+	border-right: .10em solid white;
+	white-space: nowrap;
+	animation: typing 4.5s infinite;
+	width: 0;
+}
+
+
+@keyframes typing {
+	from { width: 1em }
+	to { width: 100% }
+}
+
+.designerdeveloper{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2em;
+	gap: 1em;
+}
+
+.designerdeveloper img{
+	width: 50%;
+}
+
+@media (max-width:520px){
+	.designerdeveloper img{
+		width: 8em;
+	}
+}
+
+header p{
+	font-family: 'Bell MT Regular';
+	font-size: 1.6em;
+	font-size: clamp(.5em, 3vw, 1.6em);
+}
+
+
+header img{
+	width: 1em;
+}
+
+
+
+/**** STYLING MAIN ****/
+
+/* ***** STYLING OVER MIJ EN SKILLS ***** */
+
+
+main section#overmij{
+	display: flex;
+	margin: 8em 10em;
+	gap: 6em;
+}
+
+
+main section#overmij h2{
+	font-family: 'Bell MT Regular';
+	text-transform: uppercase;
+	font-size: 2em;
+}
+
+main section#overmij p{
+	font-family: 'Poppins';
+	width: 90%;
+	max-width: 40em;
+	min-width: 20em;
+}
+
+main section#overmij button{
+	background-color: #F09BB9;
+	padding: 1em 2em;
+	border-radius: 30px;
+	border: none;
+	color: white;
+	font-family: 'Bell MT Regular';	
+	font-size: 1.1em;
+	box-shadow: 0 .28em 0 #FFD1E1;
+	transition: .2s;
+}
+
+main section#overmij button:hover{
+	background-color: #ef7da7;
+	box-shadow: 0 .28em 0 #FFD1E1;
+}
+
+main section#overmij button:active{
+	box-shadow: 0 0 0;
+    transform: translateY(.2em);
+}
+
+.overmijtekst{
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	margin: 1em 0;
+}
+
+
+
+.rechtersection{
+	display: flex;
+	flex-direction: column;
+	gap: 4em;
+	/* align-items: flex-start; */
+	justify-content: flex-start;
+}
+
+.foto img{
+	width: 14em;
+}
+
+.skillsgrid img{
+	/* width: 4em; */
+	height: 4em;
+}
+
+.skillsgrid{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 1.3em;
+	place-content: center;
+	margin-top: 2em;
+}
+
+.skillsgrid li{
+	list-style-type: none;
+	display: flex;
+	place-content: center;
+}
+
+
+
+
+
+/******** STYLING PORTFOLIO *********/
+main section#portfolio{
+	margin-top: 2em;
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+	gap: 4em;
+	overflow: hidden;
+	padding-bottom: 2em;
+}
+
+@media (max-width:1150px){
+	main section#overmij{
+		flex-wrap: wrap;
+	}
+}
+
+main section#portfolio h2{
+	font-family: 'Bell MT Regular';
+	text-transform: uppercase;
+	font-size: 2em;
+	/* margin-bottom: 2em; */
+	text-align: center;
+}
+
+main section#portfolio > section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	/* padding: 4em; */
+	/* gap: 2em; */
+	/* height: 100vh; */
+	/* margin-top: 3em; */
+	overflow: visible;
+	/* margin-left: auto;
+	padding-right: 5em; */
+	position: relative;
+	margin-right: auto;
+	margin-left: 0;
+	padding-left: 5em;
+	padding-right: 0;
+
+}
+main section#portfolio > section:nth-of-type(2n){
+	/* margin-right: auto;
+	margin-left: 0;
+	padding-left: 5em;
+	padding-right: 0; */
+	margin-left: auto;
+	margin-right: 0;
+	padding-right: 5em;
+	
+}
+
+main section#portfolio > section:nth-of-type(2n) button img{
+	border-bottom: #F09BB9 solid .2em;
+	border-left: #F09BB9 solid .3em;
+	border-right: none;
+}
+
+
+main section#portfolio > section .blob{
+	border-radius: 35% 65% 70% 30% / 27% 30% 70% 73% ;
+	width: 24em;
+	height: 26em;
+	background-color: #F4D5ED;
+	position: absolute;
+	z-index: -1;
+	/* right:-2em; */
+	left:-3em;
+	/* left: auto; */
+	animation: randomBorderRadius 5s infinite alternate;
+	animation-timing-function: ease-in-out;
+}
+
+main section#portfolio > section:nth-of-type(2n) .blob{
+	/* left:-2em; */
+	right:-3em;
+	left: auto;
+}
+
+@keyframes randomBorderRadius {
+	0% {
+		border-radius: 35% 65% 70% 30% / 27% 30% 70% 73%;
+	}
+	25% {
+		border-radius: 50% 50% 60% 40% / 20% 40% 60% 80%;
+	}
+	50% {
+		border-radius: 40% 60% 50% 50% / 30% 20% 80% 70%;
+	}
+	75% {
+		border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+	}
+	100% {
+		border-radius: 70% 30% 40% 60% / 40% 50% 30% 60%;
+	}
+}
+
+main section#portfolio h3{
+	font-family: 'Bell MT Italic';
+	font-weight: lighter;
+	font-size: clamp(.5em, 3vw, 1.6em);
+}
+
+
+
+/* BUTTONS MET PROJECTIMG */
+main section#portfolio section button{
+	background-color: transparent;
+	border: none;
+	transition: .2s;
+		width: 40vw;
+}
+
+main section#portfolio section button:active{
+	transform: translateY(.2em);
+}
+
+main section#portfolio section button img{
+	/* width: 40vw; */
+	width: 100%;
+	min-width: 15em;
+	border-radius: 2em;
+	border-bottom: #F09BB9 solid .2em;
+	border-right: #F09BB9 solid .3em;
+	/* box-shadow: 0 .1em 0 .3em #F09BB9; */
+}
+
+
+
+/* Styling specifiek per section */
+
+
+
+
+
+/**** FOOTER STYLING ****/
+
+footer{
+	padding: 11em 10em;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	place-content: center;
+	justify-content: center;
+	text-align: center;
+}
+
+footer > div{
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	gap: 1em;
+	margin-top: 1em;
+}
+
+footer div > div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* footer div img{
+	width: 5em;
+} */
+
+footer > div div:first-of-type img{
+	width: 5em;
+}
+
+footer > div div:first-of-type p{
+	margin-top: .5em;
+}
+
+footer > div div:last-of-type img{
+	width: 4.5em;
+}
+
+footer a{
+	color: #111;
+	font-family: 'Poppins';
+}
+
+footer p{
+	color: #111;
+	font-family: 'Poppins';
+}
+
+
+/* @tekst */
+footer h2{
+	font-family: 'Bell MT Regular';
+	font-weight: lighter;
+	font-size: 2em;
+}
+
+footer h2:first-of-type{
+	transform: translate(-5%);
+}
+
+footer h2:last-of-type{
+	transform: translate(5%);
+	margin-top: .5em;
+	margin-bottom: 1em;
+}
+
+footer > p{
+	position: absolute;
+	left: 10em;
+	bottom: 2em;
+}
+
+/* logo */
+footer > img{
+	width: 3em;
+	position: absolute;
+	right: 10em;
+	bottom: 2em;
+}
+
+
+/**** SCROLLBAR STYLING (bron staat in de bronnenlijst) ****/
+
+::-webkit-scrollbar {
+    width: 7px; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f16ba0; 
+}
+	
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fab5d0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
