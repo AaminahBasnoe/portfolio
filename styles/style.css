@@ -114,7 +114,7 @@ header div{
 
 h1{
 	/* font-size: 3.5em; */
-	font-size: clamp(1em, 5vw, 3.5em);
+	font-size: clamp(1.25em, 5vw, 3.5em);
 	font-family: 'Bell MT Regular';
 	font-weight: lighter;
 
@@ -153,7 +153,7 @@ h1{
 header p{
 	font-family: 'Bell MT Regular';
 	font-size: 1.6em;
-	font-size: clamp(.5em, 3vw, 1.6em);
+	font-size: clamp(1em, 3vw, 1.6em);
 }
 
 
@@ -169,9 +169,9 @@ header img{
 
 
 main section#overmij{
-	display: flex;
-	margin: 8em 10em;
-	gap: 6em;
+	display: grid;
+	gap: 2em;	
+	padding: 4em;
 }
 
 
@@ -181,16 +181,33 @@ main section#overmij h2{
 	font-size: 2em;
 }
 
-main section#overmij p{
-	font-family: 'Poppins';
-	width: 90%;
-	max-width: 40em;
-	min-width: 20em;
+.overmijtekst{
+	display: grid;
+	gap: 1em;
+	padding: 1em 0;
 }
 
-main section#overmij button{
+
+main section#overmij p{
+	font-family: 'Poppins';
+	/* width: 90%; */
+	max-width: 40em;
+	/* font-size: clamp(.5em, 90vw	, 1em); */
+	/* font-size: .5em; */
+	/* min-width: 20em; */
+}
+
+/* main section#overmij div:first-of-type{
+	max-width: 40em;
+	min-width: 27em;
+} */
+
+
+/* cv button */
+.cvbutton{
 	background-color: #F09BB9;
 	padding: 1em 2em;
+	width: 10em;
 	border-radius: 30px;
 	border: none;
 	color: white;
@@ -198,49 +215,33 @@ main section#overmij button{
 	font-size: 1.1em;
 	box-shadow: 0 .28em 0 #FFD1E1;
 	transition: .2s;
+	text-decoration: none;
+	/* display: none; */
 }
 
-main section#overmij button:hover{
+.cvbutton:hover{
 	background-color: #ef7da7;
 	box-shadow: 0 .28em 0 #FFD1E1;
+	cursor: pointer;
 }
 
-main section#overmij button:active{
+.cvbutton:active{
 	box-shadow: 0 0 0;
     transform: translateY(.2em);
 }
 
-.overmijtekst{
-	display: flex;
-	flex-direction: column;
-	gap: 1em;
-	margin: 1em 0;
-}
 
-
-
-.rechtersection{
-	display: flex;
-	flex-direction: column;
-	gap: 4em;
-	/* align-items: flex-start; */
-	justify-content: flex-start;
-}
 
 .foto img{
 	width: 14em;
 }
 
-.skillsgrid img{
-	/* width: 4em; */
-	height: 4em;
-}
 
-.skillsgrid{
+.skillsgrid {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: repeat(3, auto);
 	gap: 1.3em;
-	place-content: center;
+	justify-content: start;
 	margin-top: 2em;
 }
 
@@ -248,6 +249,53 @@ main section#overmij button:active{
 	list-style-type: none;
 	display: flex;
 	place-content: center;
+}
+
+.skillsgrid img{
+	/* width: 4em; */
+	height: 4em;
+}
+
+
+@media (width > 480px) {
+	.skillsgrid{
+		grid-template-columns:repeat(4, auto);
+	}
+}
+
+@media (width > 1000px) {
+	main section#overmij {
+		padding: 8em 10em;
+		gap: 2em 6em;
+
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: min-content min-content 1fr;
+		grid-template-areas:
+			"wbi    foto"
+			"wbi    skills"
+			"button skills";
+
+		place-items: start;
+	}
+
+	.wbi {
+		grid-area:wbi;
+	}
+
+	main section#overmij button {
+		grid-area:button;
+	}
+
+	.foto {
+		grid-area:foto;
+		margin-bottom: 4em;
+	}
+	
+	.skills {
+		grid-area:skills;
+	}
+
+
 }
 
 
@@ -262,13 +310,8 @@ main section#portfolio{
 	/* align-items: center; */
 	gap: 4em;
 	overflow: hidden;
-	padding-bottom: 2em;
-}
-
-@media (max-width:1150px){
-	main section#overmij{
-		flex-wrap: wrap;
-	}
+	padding-top: 1em;
+	padding-bottom: 8em;
 }
 
 main section#portfolio h2{
@@ -310,24 +353,20 @@ main section#portfolio > section:nth-of-type(2n){
 }
 
 main section#portfolio > section:nth-of-type(2n) button img{
-	border-bottom: #F09BB9 solid .2em;
-	border-left: #F09BB9 solid .3em;
 	border-right: none;
 }
 
 
 main section#portfolio > section .blob{
-	border-radius: 35% 65% 70% 30% / 27% 30% 70% 73% ;
-	width: 24em;
-	height: 26em;
-	background-color: #F4D5ED;
+	/* width: 24em; */
+	width: 40vw;
+	height: 40vw;
+	/* height: 26em; */
 	position: absolute;
 	z-index: -1;
 	/* right:-2em; */
 	left:-3em;
 	/* left: auto; */
-	animation: randomBorderRadius 5s infinite alternate;
-	animation-timing-function: ease-in-out;
 }
 
 main section#portfolio > section:nth-of-type(2n) .blob{
@@ -336,28 +375,11 @@ main section#portfolio > section:nth-of-type(2n) .blob{
 	left: auto;
 }
 
-@keyframes randomBorderRadius {
-	0% {
-		border-radius: 35% 65% 70% 30% / 27% 30% 70% 73%;
-	}
-	25% {
-		border-radius: 50% 50% 60% 40% / 20% 40% 60% 80%;
-	}
-	50% {
-		border-radius: 40% 60% 50% 50% / 30% 20% 80% 70%;
-	}
-	75% {
-		border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
-	}
-	100% {
-		border-radius: 70% 30% 40% 60% / 40% 50% 30% 60%;
-	}
-}
 
 main section#portfolio h3{
 	font-family: 'Bell MT Italic';
 	font-weight: lighter;
-	font-size: clamp(.5em, 3vw, 1.6em);
+	font-size: clamp(1em, 3vw, 1.6em);
 }
 
 
@@ -367,7 +389,8 @@ main section#portfolio section button{
 	background-color: transparent;
 	border: none;
 	transition: .2s;
-		width: 40vw;
+	width: 40vw;
+	min-width: 25em;
 }
 
 main section#portfolio section button:active{
@@ -379,23 +402,257 @@ main section#portfolio section button img{
 	width: 100%;
 	min-width: 15em;
 	border-radius: 2em;
-	border-bottom: #F09BB9 solid .2em;
-	border-right: #F09BB9 solid .3em;
-	/* box-shadow: 0 .1em 0 .3em #F09BB9; */
+}
+
+main section#portfolio section button video{
+	width: 100%;
+	min-width: 15em;
+	border-radius: 2em;
 }
 
 
 
 /* Styling specifiek per section */
 
+.typosection button video{
+	border-bottom: #EED7FB solid .3em;
+	border-right: #EED7FB solid .3em;
+}
 
+.typosection .blob{
+	background-color: #EED7FB;
+	border-radius: 35% 65% 70% 30% / 27% 30% 70% 73% ;
+	animation: randomBorderRadius 12s infinite linear;
+}
 
+@keyframes randomBorderRadius {
+	0% {
+		border-radius: 35% 65% 70% 30% / 27% 30% 70% 73%;
+	}
+	10% {
+		border-radius: 60% 40% 65% 35% / 30% 50% 60% 70%;
+	}
+	20% {
+		border-radius: 45% 55% 60% 40% / 33% 40% 60% 67%;
+	}
+	30% {
+		border-radius: 50% 50% 55% 45% / 36% 45% 55% 64%;
+	}
+	40% {
+		border-radius: 55% 45% 50% 50% / 39% 50% 50% 61%;
+	}
+	50% {
+		border-radius: 60% 40% 45% 55% / 42% 55% 45% 58%;
+	}
+	60% {
+		border-radius: 65% 35% 40% 60% / 45% 60% 40% 55%;
+	}
+	70% {
+		border-radius: 70% 30% 35% 65% / 48% 65% 35% 52%;
+	}
+	80% {
+		border-radius: 55% 45% 50% 50% / 39% 50% 50% 61%;
+	}
+	90% {
+		border-radius: 40% 60% 55% 45% / 30% 50% 60% 70%;
+	}
+	100% {
+		border-radius: 35% 65% 70% 30% / 27% 30% 70% 73%;
+	}
+}
 
+.kconnectsection button img{
+	border-bottom: #81ADE7 solid .3em;
+	border-left: #81ADE7 solid .3em;
+}
+
+.kconnectsection .blob{
+	background-color: #81ADE7;
+	border-radius: 32% 68% 32% 68% / 29% 17% 83% 71%;
+	animation: randomBorderRadius2 10s infinite linear;
+}
+
+@keyframes randomBorderRadius2 {
+	0% {
+		border-radius: 32% 68% 32% 68% / 29% 17% 83% 71%;
+	}
+	10% {
+		border-radius: 50% 50% 35% 65% / 25% 25% 75% 75%;
+	}
+	20% {
+		border-radius: 45% 55% 40% 60% / 30% 20% 70% 70%;
+	}
+	30% {
+		border-radius: 40% 60% 45% 55% / 35% 15% 65% 65%;
+	}
+	40% {
+		border-radius: 35% 65% 50% 50% / 40% 10% 60% 60%;
+	}
+	50% {
+		border-radius: 30% 70% 55% 45% / 45% 5% 55% 55%;
+	}
+	60% {
+		border-radius: 25% 75% 60% 40% / 50% 10% 50% 50%;
+	}
+	70% {
+		border-radius: 20% 80% 65% 35% / 55% 15% 45% 45%;
+	}
+	80% {
+		border-radius: 25% 75% 60% 40% / 50% 20% 50% 50%;
+	}
+	90% {
+		border-radius: 30% 70% 55% 45% / 45% 25% 55% 55%;
+	}
+	100% {
+		border-radius: 32% 68% 32% 68% / 29% 17% 83% 71%;
+	}
+}
+
+.visualsection button img{
+	border-bottom: #F8C380 solid .3em;
+	border-right: #F8C380 solid .3em;
+}
+
+.visualsection .blob{
+	background-color: #F8C380 ;
+	border-radius: 15% 85% 33% 67% / 77% 74% 26% 23%;
+	animation: randomBorderRadius3 10s infinite linear;
+}
+
+@keyframes randomBorderRadius3 {
+	0% {
+		border-radius: 15% 85% 33% 67% / 77% 74% 26% 23%;
+	}
+	10% {
+		border-radius: 30% 70% 50% 50% / 70% 60% 40% 30%;
+	}
+	20% {
+		border-radius: 40% 60% 55% 45% / 65% 50% 35% 40%;
+	}
+	30% {
+		border-radius: 50% 50% 60% 40% / 60% 40% 30% 50%;
+	}
+	40% {
+		border-radius: 60% 40% 65% 35% / 55% 30% 25% 60%;
+	}
+	50% {
+		border-radius: 70% 30% 70% 30% / 50% 20% 20% 70%;
+	}
+	60% {
+		border-radius: 60% 40% 65% 35% / 55% 30% 25% 60%;
+	}
+	70% {
+		border-radius: 50% 50% 60% 40% / 60% 40% 30% 50%;
+	}
+	80% {
+		border-radius: 40% 60% 55% 45% / 65% 50% 35% 40%;
+	}
+	90% {
+		border-radius: 30% 70% 50% 50% / 70% 60% 40% 30%;
+	}
+	100% {
+		border-radius: 15% 85% 33% 67% / 77% 74% 26% 23%;
+	}
+}
+
+.trappedsection button img{
+	border-bottom: #F4D5ED solid .3em;
+	border-left: #F4D5ED solid .3em;
+}
+
+.trappedsection .blob{
+	background-color: #F4D5ED ;
+	border-radius: 77% 23% 94% 6% / 21% 29% 71% 79%;
+	animation: randomBorderRadius4 10s infinite linear;
+}
+
+@keyframes randomBorderRadius4 {
+	0% {
+		border-radius: 77% 23% 94% 6% / 21% 29% 71% 79%;
+	}
+	10% {
+		border-radius: 65% 35% 85% 15% / 25% 35% 65% 75%;
+	}
+	20% {
+		border-radius: 60% 40% 75% 25% / 30% 40% 60% 70%;
+	}
+	30% {
+		border-radius: 55% 45% 65% 35% / 35% 45% 55% 65%;
+	}
+	40% {
+		border-radius: 50% 50% 55% 45% / 40% 50% 50% 60%;
+	}
+	50% {
+		border-radius: 45% 55% 50% 50% / 45% 55% 45% 55%;
+	}
+	60% {
+		border-radius: 50% 50% 55% 45% / 40% 50% 50% 60%;
+	}
+	70% {
+		border-radius: 55% 45% 65% 35% / 35% 45% 55% 65%;
+	}
+	80% {
+		border-radius: 60% 40% 75% 25% / 30% 40% 60% 70%;
+	}
+	90% {
+		border-radius: 65% 35% 85% 15% / 25% 35% 65% 75%;
+	}
+	100% {
+		border-radius: 77% 23% 94% 6% / 21% 29% 71% 79%;
+	}
+}
+
+.bootcampsection button img{
+	border-bottom: #B2CED4 solid .3em;
+	border-right: #B2CED4 solid .3em;
+}
+
+.bootcampsection .blob{
+	background-color: #B2CED4;
+	border-radius: 20% 80% 29% 71% / 29% 75% 25% 71%;
+	animation: randomBorderRadius5 10s infinite linear;
+}
+
+@keyframes randomBorderRadius5 {
+	0% {
+		border-radius: 20% 80% 29% 71% / 29% 75% 25% 71%;
+	}
+	10% {
+		border-radius: 30% 70% 40% 60% / 35% 65% 30% 65%;
+	}
+	20% {
+		border-radius: 40% 60% 50% 50% / 40% 60% 35% 60%;
+	}
+	30% {
+		border-radius: 50% 50% 60% 40% / 45% 55% 40% 55%;
+	}
+	40% {
+		border-radius: 60% 40% 70% 30% / 50% 50% 45% 50%;
+	}
+	50% {
+		border-radius: 70% 30% 80% 20% / 55% 45% 50% 45%;
+	}
+	60% {
+		border-radius: 60% 40% 70% 30% / 50% 50% 45% 50%;
+	}
+	70% {
+		border-radius: 50% 50% 60% 40% / 45% 55% 40% 55%;
+	}
+	80% {
+		border-radius: 40% 60% 50% 50% / 40% 60% 35% 60%;
+	}
+	90% {
+		border-radius: 30% 70% 40% 60% / 35% 65% 30% 65%;
+	}
+	100% {
+		border-radius: 20% 80% 29% 71% / 29% 75% 25% 71%;
+	}
+}
 
 /**** FOOTER STYLING ****/
 
 footer{
-	padding: 11em 10em;
+	padding: 6em 10em 11em 10em;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -441,6 +698,10 @@ footer a{
 	font-family: 'Poppins';
 }
 
+footer a:hover{
+	color: #F09BB9;
+}
+
 footer p{
 	color: #111;
 	font-family: 'Poppins';
@@ -466,7 +727,8 @@ footer h2:last-of-type{
 
 footer > p{
 	position: absolute;
-	left: 10em;
+	/* left: 10em; */
+	left: 10%;
 	bottom: 2em;
 }
 
@@ -474,8 +736,9 @@ footer > p{
 footer > img{
 	width: 3em;
 	position: absolute;
-	right: 10em;
+	/* right: 10em; */
 	bottom: 2em;
+	right: 10%;
 }
 
 
@@ -487,12 +750,12 @@ footer > img{
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #f16ba0; 
+    background: #fab5d0; 
 }
 	
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #fab5d0;
+    background: #f16ba0;
 }
 
 /* Track */
