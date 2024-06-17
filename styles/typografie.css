@@ -109,6 +109,72 @@ header img{
 
 /* **** STYLING MAIN **** */
 
+main{
+	padding: 6em 22em 6em 14em;
+
+}
+
+main h2{
+	font-family: 'Bell MT Regular';
+	text-transform: uppercase;
+	font-size: 2em;
+	padding-bottom: .5em;
+}
+
+main p{
+	font-family: 'Poppins';
+}
+
+main li{
+	font-family: 'Poppins';
+	list-style-type: none;
+}
+
+main li span{
+	margin-right: .3em;
+	font-size: .8em;
+}
+
+main > div:first-of-type{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+main > div:nth-of-type(2){
+	padding-top: 5em;
+}
+
+main > div:nth-of-type(2) p{
+	margin-bottom: 2.5em;
+}
+
+main > div a{
+	background-color: #F09BB9;
+	padding: 1em 2em;
+	width: 10em;
+	border-radius: 30px;
+	border: none;
+	color: white;
+	font-family: inherit;	
+	font-size: 1.1em;
+	box-shadow: 0 .28em 0 #FFD1E1;
+	transition: .2s;
+	text-decoration: none;
+	margin-top: 1em;
+}
+
+main > div a:hover{
+	background-color: #ef7da7;
+	box-shadow: 0 .28em 0 #FFD1E1;
+	cursor: pointer;
+}
+
+main > div a:active{
+	box-shadow: 0 0 0;
+    transform: translateY(.2em);
+}
+
 
 
 

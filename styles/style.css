@@ -234,6 +234,11 @@ main section#overmij p{
 
 .foto img{
 	width: 14em;
+	transition: .4s;
+}
+
+.foto img:hover{
+	transform: scale(1.07) rotate(4deg);
 }
 
 
@@ -254,8 +259,12 @@ main section#overmij p{
 .skillsgrid img{
 	/* width: 4em; */
 	height: 4em;
+	transition: .3s;
 }
 
+.skillsgrid img:hover{
+	transform: scale(1.1);
+}
 
 @media (width > 480px) {
 	.skillsgrid{
@@ -302,7 +311,7 @@ main section#overmij p{
 
 
 
-/******** STYLING PORTFOLIO *********/
+/******** STYLING PORTFOLIO ********************************************************************************************/
 main section#portfolio{
 	margin-top: 2em;
 	display: flex;
@@ -352,7 +361,7 @@ main section#portfolio > section:nth-of-type(2n){
 	
 }
 
-main section#portfolio > section:nth-of-type(2n) button img{
+main section#portfolio > section:nth-of-type(2n) a img{
 	border-right: none;
 }
 
@@ -360,7 +369,9 @@ main section#portfolio > section:nth-of-type(2n) button img{
 main section#portfolio > section .blob{
 	/* width: 24em; */
 	width: 40vw;
+	min-width: 14em;
 	height: 40vw;
+	min-height: 14em;
 	/* height: 26em; */
 	position: absolute;
 	z-index: -1;
@@ -379,13 +390,14 @@ main section#portfolio > section:nth-of-type(2n) .blob{
 main section#portfolio h3{
 	font-family: 'Bell MT Italic';
 	font-weight: lighter;
-	font-size: clamp(1em, 3vw, 1.6em);
+	font-size: clamp(1em, 3vw, 1.8em);
+	padding-bottom: .5em ;
 }
 
 
 
 /* BUTTONS MET PROJECTIMG */
-main section#portfolio section button{
+main section#portfolio section a{
 	background-color: transparent;
 	border: none;
 	transition: .2s;
@@ -393,19 +405,23 @@ main section#portfolio section button{
 	min-width: 25em;
 }
 
-main section#portfolio section button:active{
+main section#portfolio section a img:active{
 	transform: translateY(.2em);
 }
 
-main section#portfolio section button img{
-	/* width: 40vw; */
-	width: 100%;
+main section#portfolio section a video:active{
+	transform: translateY(.2em);
+}
+
+main section#portfolio section a img{
+	width: 40vw;
+	/* width: 100%; */
 	min-width: 15em;
 	border-radius: 2em;
 }
 
-main section#portfolio section button video{
-	width: 100%;
+main section#portfolio section a video{
+	width: 40vw;
 	min-width: 15em;
 	border-radius: 2em;
 }
@@ -414,9 +430,16 @@ main section#portfolio section button video{
 
 /* Styling specifiek per section */
 
-.typosection button video{
+.typosection a video{
 	border-bottom: #EED7FB solid .3em;
 	border-right: #EED7FB solid .3em;
+	transition: .4s;
+}
+
+.typosection a video:hover{
+	border-bottom: #be6fec solid .3em;
+	border-right: #be6fec solid .3em;
+	transform: scale(1.02);
 }
 
 .typosection .blob{
@@ -461,9 +484,16 @@ main section#portfolio section button video{
 	}
 }
 
-.kconnectsection button img{
+.kconnectsection a img{
 	border-bottom: #81ADE7 solid .3em;
 	border-left: #81ADE7 solid .3em;
+	transition: .4s;
+}
+
+.kconnectsection a img:hover{
+	border-bottom: #3c88eb solid .3em;
+	border-left: #3c88eb solid .3em;
+	transform: scale(1.02);
 }
 
 .kconnectsection .blob{
@@ -508,9 +538,16 @@ main section#portfolio section button video{
 	}
 }
 
-.visualsection button img{
+.visualsection a img{
 	border-bottom: #F8C380 solid .3em;
 	border-right: #F8C380 solid .3em;
+	transition: .4s;
+}
+
+.visualsection a img:hover{
+	border-bottom: #f5b057 solid .3em;
+	border-right: #f5b057 solid .3em;
+	transform: scale(1.02);
 }
 
 .visualsection .blob{
@@ -555,9 +592,16 @@ main section#portfolio section button video{
 	}
 }
 
-.trappedsection button img{
+.trappedsection a img{
 	border-bottom: #F4D5ED solid .3em;
 	border-left: #F4D5ED solid .3em;
+	transition: .4s;
+}
+
+.trappedsection a img:hover{
+	border-bottom: #f799e1 solid .3em;
+	border-left: #f799e1  solid .3em;
+	transform: scale(1.02);
 }
 
 .trappedsection .blob{
@@ -602,9 +646,16 @@ main section#portfolio section button video{
 	}
 }
 
-.bootcampsection button img{
+.bootcampsection a img{
 	border-bottom: #B2CED4 solid .3em;
 	border-right: #B2CED4 solid .3em;
+	transition: .4s;
+}
+
+.bootcampsection a img:hover{
+	border-bottom: #55a4b6 solid .3em;
+	border-right: #55a4b6 solid .3em;
+	transform: scale(1.02);
 }
 
 .bootcampsection .blob{
