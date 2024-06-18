@@ -443,7 +443,8 @@ main section#portfolio section a video{
 }
 
 .typosection .blob{
-	background-color: #EED7FB;
+	/* background-color: #EED7FB; */
+	background: linear-gradient(95deg, rgba(229,197,246,1) 0%, rgba(246,231,254,1) 100%);
 	border-radius: 35% 65% 70% 30% / 27% 30% 70% 73% ;
 	animation: randomBorderRadius 12s infinite linear;
 }
@@ -497,7 +498,8 @@ main section#portfolio section a video{
 }
 
 .kconnectsection .blob{
-	background-color: #81ADE7;
+	/* background-color: #81ADE7; */
+	background: linear-gradient(75deg, rgba(183,212,237,1) 0%, rgba(112,158,239,1) 100%);
 	border-radius: 32% 68% 32% 68% / 29% 17% 83% 71%;
 	animation: randomBorderRadius2 10s infinite linear;
 }
@@ -551,7 +553,8 @@ main section#portfolio section a video{
 }
 
 .visualsection .blob{
-	background-color: #F8C380 ;
+	/* background-color: #F8C380 ; */
+	background: linear-gradient(33deg, rgba(247,177,129,1) 0%, rgba(250,198,120,1) 100%);
 	border-radius: 15% 85% 33% 67% / 77% 74% 26% 23%;
 	animation: randomBorderRadius3 10s infinite linear;
 }
@@ -605,7 +608,8 @@ main section#portfolio section a video{
 }
 
 .trappedsection .blob{
-	background-color: #F4D5ED ;
+	/* background-color: #F4D5ED ; */
+	background: linear-gradient(150deg, rgba(233,175,227,1) 0%, rgba(244,211,233,1) 100%);
 	border-radius: 77% 23% 94% 6% / 21% 29% 71% 79%;
 	animation: randomBorderRadius4 10s infinite linear;
 }
@@ -659,7 +663,8 @@ main section#portfolio section a video{
 }
 
 .bootcampsection .blob{
-	background-color: #B2CED4;
+	/* background-color: #B2CED4; */
+	background: linear-gradient(218deg, rgba(169,199,207,1) 0%, rgba(208,225,228,1) 100%);
 	border-radius: 20% 80% 29% 71% / 29% 75% 25% 71%;
 	animation: randomBorderRadius5 10s infinite linear;
 }
@@ -790,6 +795,20 @@ footer > img{
 	/* right: 10em; */
 	bottom: 2em;
 	right: 10%;
+}
+
+
+/**** FOOTER STYLING RESPONSIVE ****/
+@media (width < 570px) {
+	footer{
+		padding: 6em 7em 11em 7em;
+	}
+}
+
+@media (width < 460px) {
+	footer{
+		padding: 6em 4em 11em 4em;
+	}
 }
 
 

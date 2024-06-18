@@ -1,0 +1,354 @@
+/*********/
+/* FONTS */
+/*********/
+@font-face {
+	font-family: 'Bell MT Regular';
+	src:url("../fonts/bell.ttf") format("truetype");	
+}
+
+
+@font-face {
+	font-family: 'Bell MT Italic';
+	src:url("../fonts/BellMTItalic.otf") format("opentype");	
+}
+
+@font-face {
+	font-family: 'Centaur';
+	src:url("../fonts/CENTAUR.TTF") format("truetype");	
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src:url("../fonts/Poppins-Regular.ttf") format("truetype");	
+}
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+  margin: 0;
+  padding: 0;
+}
+
+button, summary {
+	cursor: pointer;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text:#111;
+	--color-background:#eee;
+}
+
+/* **** STYLING NAV **** */
+
+nav{
+	padding-top: 2em;
+	padding-right: 2em;
+	/* position: absolute; */
+}
+
+nav ul{
+	list-style-type: none;
+	display: flex;
+	gap: 2em;
+    align-items: end;
+    justify-content: end;
+}
+
+nav ul li a{
+	color: #4F4F4F;
+	text-decoration: none;
+}
+
+nav ul li a:hover{
+	text-decoration: underline;
+}
+
+
+
+/* **** STYLING HEADER **** */
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+h1{
+    font-size: clamp(1.25em, 5vw, 2.5em);
+	font-family: 'Bell MT Regular';
+	/* font-weight: lighter;s */
+    text-transform: uppercase;
+    padding-top: 2em;
+    padding-bottom: .5em;
+}
+
+header p{
+    font-family: 'Poppins';
+    font-size: clamp(1em, 1.5vw, 1.5em);
+    padding-bottom: 1em;
+}
+
+
+header img{
+    width: 100%;
+}
+
+
+
+/* **** STYLING MAIN **** */
+
+main{
+	padding: 6em 22em 6em 14em;
+
+}
+
+main h2{
+	font-family: 'Bell MT Regular';
+	text-transform: uppercase;
+	font-size: 2em;
+	padding-bottom: .5em;
+}
+
+main p{
+	font-family: 'Poppins';
+}
+
+main li{
+	font-family: 'Poppins';
+	list-style-type: none;
+}
+
+main li span{
+	margin-right: .3em;
+	font-size: .8em;
+}
+
+main > div:first-of-type{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+main > div:nth-of-type(2){
+	padding-top: 5em;
+}
+
+main > div:nth-of-type(2) p{
+	margin-bottom: 2.5em;
+}
+
+main > div a{
+	background-color: #F09BB9;
+	padding: 1em 2em;
+	width: 10em;
+	border-radius: 30px;
+	border: none;
+	color: white;
+	font-family: inherit;	
+	font-size: 1.1em;
+	box-shadow: 0 .28em 0 #FFD1E1;
+	transition: .2s;
+	text-decoration: none;
+	margin-top: 1em;
+}
+
+main > div a:hover{
+	background-color: #ef7da7;
+	box-shadow: 0 .28em 0 #FFD1E1;
+	cursor: pointer;
+}
+
+main > div a:active{
+	box-shadow: 0 0 0;
+    transform: translateY(.2em);
+}
+
+
+/* **** STYLING MAIN RESPONCIVE**** */
+
+@media (width < 1080px) {
+	main{
+		padding: 6em 18em 6em 10em;
+	}
+}
+
+@media (width < 975px) {
+	main{
+		padding: 6em 15em 6em 7em;
+	}
+}
+
+@media (width < 765px) {
+	main{
+		padding: 6em 10em 6em 7em;
+	}
+}
+
+@media (width < 685px) {
+	main{
+		padding: 6em 7em 6em 5em;
+	}
+
+	main > div:first-of-type{
+		gap: 2em;
+	}
+}
+
+@media (width < 570px) {
+	main h2{
+		font-size: 1.3em;
+	}
+}
+
+@media (width < 480px) {
+	main{
+		padding: 6em 2em 6em 2em;
+	}
+	
+	main h2{
+		font-size: 1.3em;
+	}
+}
+
+
+
+
+
+/**** FOOTER STYLING ****/
+
+footer{
+	padding: 6em 10em 11em 10em;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	place-content: center;
+	justify-content: center;
+	text-align: center;
+}
+
+footer > div{
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	gap: 1em;
+	margin-top: 1em;
+}
+
+footer div > div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: .5em;
+}
+
+/* footer div img{
+	width: 5em;
+} */
+
+footer > div div:first-of-type img{
+	width: 5em;
+}
+
+footer > div div:first-of-type p{
+	margin-top: .5em;
+}
+
+footer > div div:last-of-type img{
+	width: 4.5em;
+}
+
+footer a{
+	color: #111;
+	font-family: 'Poppins';
+}
+
+footer a:hover{
+	color: #F09BB9;
+}
+
+footer p{
+	color: #111;
+	font-family: 'Poppins';
+}
+
+
+/* @tekst */
+footer h2{
+	font-family: 'Bell MT Regular';
+	font-weight: lighter;
+	font-size: 2em;
+}
+
+footer h2:first-of-type{
+	transform: translate(-5%);
+}
+
+footer h2:last-of-type{
+	transform: translate(5%);
+	margin-top: .5em;
+	margin-bottom: 1em;
+}
+
+footer > p{
+	position: absolute;
+	/* left: 10em; */
+	left: 10%;
+	bottom: 2em;
+}
+
+/* logo */
+footer > img{
+	width: 3em;
+	position: absolute;
+	/* right: 10em; */
+	bottom: 2em;
+	right: 10%;
+}
+
+/**** FOOTER STYLING RESPONSIVE ****/
+@media (width < 570px) {
+	footer{
+		padding: 6em 7em 11em 7em;
+	}
+}
+
+@media (width < 460px) {
+	footer{
+		padding: 6em 4em 11em 4em;
+	}
+}
+
+
+/**** SCROLLBAR STYLING (bron staat in de bronnenlijst) ****/
+
+::-webkit-scrollbar {
+    width: 7px; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fab5d0; 
+}
+	
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #f16ba0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}

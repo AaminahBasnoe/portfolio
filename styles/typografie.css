@@ -176,7 +176,51 @@ main > div a:active{
 }
 
 
+/* **** STYLING MAIN RESPONCIVE**** */
 
+@media (width < 1080px) {
+	main{
+		padding: 6em 18em 6em 10em;
+	}
+}
+
+@media (width < 975px) {
+	main{
+		padding: 6em 15em 6em 7em;
+	}
+}
+
+@media (width < 765px) {
+	main{
+		padding: 6em 10em 6em 7em;
+	}
+}
+
+@media (width < 685px) {
+	main{
+		padding: 6em 7em 6em 5em;
+	}
+
+	main > div:first-of-type{
+		gap: 2em;
+	}
+}
+
+@media (width < 570px) {
+	main h2{
+		font-size: 1.3em;
+	}
+}
+
+@media (width < 480px) {
+	main{
+		padding: 6em 2em 6em 2em;
+	}
+	
+	main h2{
+		font-size: 1.3em;
+	}
+}
 
 
 
@@ -272,6 +316,22 @@ footer > img{
 	bottom: 2em;
 	right: 10%;
 }
+
+
+/**** FOOTER STYLING RESPONSIVE ****/
+@media (width < 570px) {
+	footer{
+		padding: 6em 7em 11em 7em;
+	}
+}
+
+@media (width < 460px) {
+	footer{
+		padding: 6em 4em 11em 4em;
+	}
+}
+
+
 
 
 /**** SCROLLBAR STYLING (bron staat in de bronnenlijst) ****/
