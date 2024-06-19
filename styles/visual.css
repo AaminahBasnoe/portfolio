@@ -103,6 +103,7 @@ header p{
 
 header img{
     width: 100%;
+	border-bottom: #F6BD8F solid 5px;
 }
 
 
